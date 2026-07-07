@@ -416,6 +416,16 @@ h3 {
   font-style: italic;
 }
 
+.ledger .mark {
+  display: inline-block;
+  width: 1.2em;
+  font-style: normal;
+}
+
+.mark-flag {
+  font-weight: 600;
+}
+
 .ledger-note {
   padding: 12px 24px;
   border-top: 1px solid var(--rule);
@@ -480,6 +490,62 @@ h3 {
 .why-item p {
   color: var(--ink-soft);
   max-width: 62ch;
+}
+
+/* ---------- What else we build ---------- */
+
+.section-else .section-head {
+  margin-bottom: 38px;
+}
+
+.section-else .section-head h2 {
+  font-size: clamp(1.5rem, 1.2rem + 1.4vw, 1.9rem);
+}
+
+.else-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.else-item {
+  border-top: 1px solid var(--rule);
+  padding-top: 16px;
+}
+
+.else-item h3 {
+  font-size: 1.12rem;
+  margin-bottom: 4px;
+}
+
+.else-item p {
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+  max-width: 58ch;
+}
+
+/* ---------- Closing CTA ---------- */
+
+.cta-inner {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+.cta-inner h2 {
+  font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.2rem);
+  max-width: 24ch;
+}
+
+.btn-invert {
+  background: var(--cream);
+  border-color: var(--cream);
+  color: var(--navy);
+}
+
+.btn-invert:hover {
+  background: var(--cream-deep);
+  border-color: var(--cream-deep);
 }
 
 /* ---------- FAQ ---------- */
@@ -607,6 +673,12 @@ h3 {
   .faq-list {
     grid-template-columns: 1fr 1fr;
     column-gap: 68px;
+  }
+
+  .else-grid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 60px;
+    row-gap: 32px;
   }
 
   .why-item:nth-child(2),
