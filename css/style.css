@@ -412,6 +412,140 @@ h3 {
   max-width: 62ch;
 }
 
+/* ---------- Deliverables ---------- */
+
+.deliver-cols {
+  display: grid;
+  gap: 36px;
+  margin-bottom: 72px;
+}
+
+.deliver-item {
+  border-top: 1px solid var(--rule);
+  padding-top: 24px;
+}
+
+.deliver-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.deliver-item p {
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- Sample ledger ---------- */
+
+.ledger {
+  border: 1px solid var(--rule-strong);
+  background: var(--cream-deep);
+}
+
+.ledger-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--rule-strong);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--navy);
+}
+
+.ledger-period {
+  color: var(--brass);
+}
+
+.ledger-scroll {
+  overflow-x: auto;
+}
+
+.ledger table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.ledger th {
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+  padding: 14px 24px 10px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.ledger td {
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+  color: var(--ink);
+}
+
+.ledger tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.ledger .num {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.ledger-op {
+  display: block;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.ledger .ok {
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.ledger .flag {
+  color: var(--brass);
+  font-style: italic;
+}
+
+.ledger-note {
+  padding: 12px 24px;
+  border-top: 1px solid var(--rule);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* ---------- FAQ ---------- */
+
+.faq-list {
+  display: grid;
+  gap: 0;
+}
+
+.faq-item {
+  padding: 28px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.faq-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.faq-item p {
+  color: var(--ink-soft);
+  max-width: 62ch;
+}
+
 /* ---------- Contact ---------- */
 
 .contact-wrap {
@@ -652,6 +786,21 @@ h3 {
   .rule-grid-4 {
     grid-template-columns: repeat(4, 1fr);
     column-gap: 40px;
+  }
+
+  .deliver-cols {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 48px;
+  }
+
+  .faq-list {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 72px;
+  }
+
+  .faq-item:nth-child(2) {
+    border-top: none;
+    padding-top: 0;
   }
 
   .who-cols {
