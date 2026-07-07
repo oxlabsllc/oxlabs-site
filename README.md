@@ -6,7 +6,7 @@ Single-page static marketing site for OX Labs. Plain HTML, CSS, and vanilla Java
 /
 ├── index.html        # the whole site (single page)
 ├── css/style.css     # all styles
-├── js/main.js        # nav, scroll reveals, contact form
+├── js/main.js        # nav, scroll navigation
 ├── assets/           # favicon and any future images
 └── README.md
 ```
@@ -30,28 +30,7 @@ Single-page static marketing site for OX Labs. Plain HTML, CSS, and vanilla Java
 
 Any push to `main` redeploys automatically.
 
-## 2. Wire up the contact form (Formspree)
-
-The form currently points at a placeholder endpoint and **will not deliver messages** until you swap in a real form ID.
-
-1. Sign up at [formspree.io](https://formspree.io) (free tier is fine to start).
-2. Create a new form — Formspree gives you an endpoint like `https://formspree.io/f/abcdwxyz`.
-3. In `index.html`, find the form tag and replace `YOUR_FORM_ID`:
-
-   ```html
-   <form class="contact-form" id="contact-form" action="https://formspree.io/f/abcdwxyz" method="POST" ...>
-   ```
-
-4. Push the change. Submit the form once from the live site — Formspree asks you to confirm your email the first time, and after that submissions arrive in your inbox.
-
-The form includes a hidden `_gotcha` honeypot field for spam; leave it in place.
-
-**Also update the placeholder contact info** (it appears in the contact section, footer, and the error message in `js/main.js`):
-
-- Email: `al@oxlabs.com`
-- Phone: `(713) 555-0134` — this is a fictional placeholder number; replace it or delete the phone links entirely.
-
-## 3. Add a custom domain later
+## 2. Add a custom domain later
 
 1. Buy a domain (e.g. `oxlabs.com`) from any registrar.
 2. Create a file named `CNAME` (no extension) in the repo root containing just the domain:
@@ -68,5 +47,5 @@ The form includes a hidden `_gotcha` honeypot field for spam; leave it in place.
 ## Notes
 
 - No cookies, no analytics, no tracking — by design.
-- The only external requests are Google Fonts (IBM Plex Sans/Mono) and Formspree on submit.
-- The dashboard card in the hero is an illustrative mock — well names, operators, and amounts are fictional.
+- The only external request is Google Fonts (EB Garamond).
+- Contact is by email only (`oxlabsllc@gmail.com`).

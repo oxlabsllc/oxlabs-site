@@ -1,5 +1,5 @@
 // OX Labs — main.js
-// Mobile nav, header rule on scroll, active nav link, contact form.
+// Mobile nav, header rule on scroll, active nav link.
 
 (function () {
   "use strict";
@@ -32,7 +32,7 @@
   });
 
   // ----- Active nav link while scrolling -----
-  var sections = ["problem", "how", "who", "why", "contact"]
+  var sections = ["problem", "how", "who", "why"]
     .map(function (id) {
       return document.getElementById(id);
     })
@@ -57,46 +57,6 @@
 
   window.addEventListener("scroll", setActiveLink, { passive: true });
   setActiveLink();
-
-  // ----- Contact form (Formspree via fetch, falls back to plain POST without JS) -----
-  var form = document.getElementById("contact-form");
-  var status = document.getElementById("form-status");
-  var submitBtn = document.getElementById("form-submit");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    status.textContent = "";
-    status.className = "form-status";
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Sending…";
-
-    fetch(form.action, {
-      method: "POST",
-      body: new FormData(form),
-      headers: { Accept: "application/json" },
-    })
-      .then(function (res) {
-        if (res.ok) {
-          form.reset();
-          status.classList.add("ok");
-          status.textContent = "Got it — we'll be in touch within one business day.";
-        } else {
-          showError();
-        }
-      })
-      .catch(showError)
-      .finally(function () {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Send Message";
-      });
-  });
-
-  function showError() {
-    status.classList.add("error");
-    status.innerHTML =
-      'Something went wrong. Email us directly at <a href="mailto:al@oxlabs.com">al@oxlabs.com</a>.';
-  }
 
   // ----- Footer year -----
   document.getElementById("year").textContent = String(new Date().getFullYear());
