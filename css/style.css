@@ -1,23 +1,24 @@
 /* ==========================================================================
    OX Labs — style.css
-   Old-money aesthetic: cream + dark navy + muted brass. EB Garamond.
-   Hairline rules, square corners, generous whitespace, no animations.
+   Old-money: cream + dark navy + burnished gold. EB Garamond throughout.
+   Sentence case, hairline rules, square corners, generous whitespace.
+   No animations, no gradients, no hover effects beyond underlines.
    ========================================================================== */
 
 :root {
-  --cream: #f7f3ea;
-  --cream-deep: #f1ece0;
-  --navy: #14243c;
-  --navy-deep: #0e1a2d;
-  --ink: #1d2836;
-  --ink-soft: #4c5a6b;
-  --brass: #8a6d3b;
-  --rule: rgba(20, 36, 60, 0.18);
-  --rule-strong: rgba(20, 36, 60, 0.4);
-  --rule-light: rgba(247, 243, 234, 0.22);
-  --rule-light-strong: rgba(247, 243, 234, 0.5);
-  --cream-muted: rgba(247, 243, 234, 0.72);
-  --font-serif: "EB Garamond", Garamond, "Times New Roman", serif;
+  --cream: #f9f7f4;
+  --cream-deep: #f2efe9;
+  --navy: #1a1f36;
+  --navy-deep: #12162a;
+  --ink: #2b2f3a;
+  --ink-soft: #575c68;
+  --gold: #8b7355;
+  --gold-light: #a89475;
+  --rule: rgba(26, 31, 54, 0.16);
+  --rule-strong: rgba(26, 31, 54, 0.38);
+  --rule-light: rgba(249, 247, 244, 0.22);
+  --cream-muted: rgba(249, 247, 244, 0.75);
+  --font-serif: "EB Garamond", Garamond, Georgia, "Times New Roman", serif;
   --header-h: 76px;
 }
 
@@ -32,14 +33,13 @@
 }
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 12px);
 }
 
 body {
   font-family: var(--font-serif);
   font-size: 1.0625rem;
-  line-height: 1.65;
+  line-height: 1.7;
   color: var(--ink);
   background-color: var(--cream);
   -webkit-font-smoothing: antialiased;
@@ -60,15 +60,14 @@ h1,
 h2,
 h3 {
   font-weight: 500;
-  line-height: 1.18;
-  letter-spacing: 0.005em;
+  line-height: 1.2;
   color: var(--navy);
   text-wrap: balance;
 }
 
 .container {
   width: 100%;
-  max-width: 1080px;
+  max-width: 1000px;
   margin-inline: auto;
   padding-inline: 24px;
 }
@@ -90,16 +89,14 @@ h3 {
 /* ---------- Shared bits ---------- */
 
 .eyebrow {
-  font-size: 0.78rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.24em;
-  color: var(--brass);
-  margin-bottom: 22px;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 18px;
 }
 
 .section {
-  padding-block: 88px;
+  padding-block: 64px;
 }
 
 .section-bordered {
@@ -107,12 +104,12 @@ h3 {
 }
 
 .section-head {
-  max-width: 640px;
-  margin-bottom: 60px;
+  max-width: 620px;
+  margin-bottom: 52px;
 }
 
 .section-head h2 {
-  font-size: clamp(1.9rem, 1.4rem + 2.4vw, 2.7rem);
+  font-size: clamp(1.8rem, 1.3rem + 2.2vw, 2.5rem);
 }
 
 /* Navy bands */
@@ -128,7 +125,7 @@ h3 {
 }
 
 .section-navy .eyebrow {
-  color: #b99a5f;
+  color: var(--gold-light);
 }
 
 /* ---------- Buttons & links ---------- */
@@ -137,65 +134,37 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 32px;
+  padding: 14px 34px;
   border: 1px solid var(--navy);
   border-radius: 0;
   font-family: inherit;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   line-height: 1.2;
   cursor: pointer;
-  background: none;
-  color: var(--navy);
-}
-
-.btn-solid {
   background: var(--navy);
   color: var(--cream);
 }
 
-.btn-solid:hover {
+.btn:hover {
   background: var(--navy-deep);
+  border-color: var(--navy-deep);
 }
 
-.btn-outline {
-  padding: 10px 22px;
-  font-size: 0.8rem;
-}
-
-.btn-outline:hover {
-  background: var(--navy);
-  color: var(--cream);
-}
-
-.btn-cream {
-  border-color: var(--cream);
-  color: var(--cream);
-}
-
-.btn-cream:hover {
-  background: var(--cream);
-  color: var(--navy);
-}
-
-.btn:disabled {
-  opacity: 0.55;
-  cursor: default;
+.btn-small {
+  padding: 9px 22px;
+  font-size: 0.98rem;
 }
 
 .text-link {
-  font-size: 1rem;
-  font-style: italic;
-  color: var(--navy);
-  border-bottom: 1px solid var(--rule-strong);
-  padding-bottom: 2px;
+  font-size: 1.05rem;
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .text-link:hover {
-  border-bottom-color: var(--brass);
-  color: var(--brass);
+  text-decoration: underline;
 }
 
 /* ---------- Header ---------- */
@@ -221,35 +190,27 @@ h3 {
 }
 
 .brand {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--navy);
 }
 
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 34px;
+  gap: 30px;
 }
 
 .nav-link {
-  font-size: 0.82rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--ink-soft);
+  font-size: 1rem;
+  color: var(--navy);
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--navy);
-}
-
-.nav-link.active {
-  border-bottom: 1px solid var(--brass);
-  padding-bottom: 2px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .nav-cta {
@@ -279,49 +240,47 @@ h3 {
 /* ---------- Hero ---------- */
 
 .hero {
-  padding-top: calc(var(--header-h) + 110px);
-  padding-bottom: 110px;
+  padding-top: calc(var(--header-h) + 96px);
+  padding-bottom: 96px;
   border-bottom: 1px solid var(--rule);
 }
 
 .hero .eyebrow {
-  padding-top: 26px;
+  padding-top: 24px;
   border-top: 1px solid var(--rule-strong);
   display: inline-block;
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 1.6rem + 4.4vw, 4.1rem);
-  font-weight: 500;
+  font-size: clamp(2.4rem, 1.6rem + 4vw, 3.8rem);
   max-width: 18ch;
 }
 
 .hero-sub {
-  margin-top: 28px;
-  font-size: 1.25rem;
-  font-style: italic;
+  margin-top: 26px;
+  font-size: 1.2rem;
   color: var(--ink-soft);
-  max-width: 52ch;
+  max-width: 54ch;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 32px;
-  margin-top: 48px;
+  gap: 30px;
+  margin-top: 44px;
 }
 
-/* ---------- Ruled grids (Problem, How It Works) ---------- */
+/* ---------- Ruled grids (Problem, How it works) ---------- */
 
 .rule-grid {
   display: grid;
-  gap: 40px;
+  gap: 36px;
 }
 
 .rule-item {
   border-top: 1px solid var(--rule);
-  padding-top: 24px;
+  padding-top: 22px;
 }
 
 .section-navy .rule-item {
@@ -332,16 +291,16 @@ h3 {
   display: block;
   font-size: 1rem;
   font-style: italic;
-  color: var(--brass);
-  margin-bottom: 14px;
+  color: var(--gold);
+  margin-bottom: 12px;
 }
 
 .section-navy .numeral {
-  color: #b99a5f;
+  color: var(--gold-light);
 }
 
 .rule-item h3 {
-  font-size: 1.3rem;
+  font-size: 1.28rem;
   margin-bottom: 10px;
 }
 
@@ -354,75 +313,17 @@ h3 {
   color: var(--cream-muted);
 }
 
-/* ---------- Who it's for ---------- */
-
-.who-cols {
-  display: grid;
-  gap: 48px;
-}
-
-.who-col {
-  border-top: 1px solid var(--rule);
-  padding-top: 28px;
-}
-
-.who-col h3 {
-  font-size: 1.55rem;
-  margin-bottom: 14px;
-}
-
-.who-col p {
-  color: var(--ink-soft);
-  max-width: 48ch;
-}
-
-.also-fits {
-  margin-top: 56px;
-  padding-top: 20px;
-  border-top: 1px solid var(--rule);
-  font-size: 0.98rem;
-  font-style: italic;
-  color: var(--ink-soft);
-}
-
-/* ---------- Why list ---------- */
-
-.why-list {
-  display: grid;
-  gap: 0;
-}
-
-.why-item {
-  padding: 30px 0;
-  border-top: 1px solid var(--rule);
-}
-
-.why-item:first-child {
-  border-top: none;
-  padding-top: 0;
-}
-
-.why-item h3 {
-  font-size: 1.3rem;
-  margin-bottom: 8px;
-}
-
-.why-item p {
-  color: var(--ink-soft);
-  max-width: 62ch;
-}
-
 /* ---------- Deliverables ---------- */
 
 .deliver-cols {
   display: grid;
-  gap: 36px;
-  margin-bottom: 72px;
+  gap: 34px;
+  margin-bottom: 64px;
 }
 
 .deliver-item {
   border-top: 1px solid var(--rule);
-  padding-top: 24px;
+  padding-top: 22px;
 }
 
 .deliver-item h3 {
@@ -447,17 +348,17 @@ h3 {
   align-items: baseline;
   justify-content: space-between;
   gap: 16px;
-  padding: 18px 24px;
+  padding: 16px 24px;
   border-bottom: 1px solid var(--rule-strong);
-  font-size: 0.8rem;
+  font-size: 1.05rem;
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
   color: var(--navy);
 }
 
 .ledger-period {
-  color: var(--brass);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold);
 }
 
 .ledger-scroll {
@@ -473,12 +374,11 @@ h3 {
 
 .ledger th {
   text-align: left;
-  font-weight: 500;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 0.9rem;
   color: var(--ink-soft);
-  padding: 14px 24px 10px;
+  padding: 12px 24px 8px;
   border-bottom: 1px solid var(--rule);
 }
 
@@ -512,7 +412,7 @@ h3 {
 }
 
 .ledger .flag {
-  color: var(--brass);
+  color: var(--gold);
   font-style: italic;
 }
 
@@ -524,6 +424,64 @@ h3 {
   color: var(--ink-soft);
 }
 
+/* ---------- Who it's for ---------- */
+
+.who-cols {
+  display: grid;
+  gap: 44px;
+}
+
+.who-col {
+  border-top: 1px solid var(--rule);
+  padding-top: 26px;
+}
+
+.who-col h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.who-col p {
+  color: var(--ink-soft);
+  max-width: 50ch;
+}
+
+.also-fits {
+  margin-top: 48px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  font-size: 0.98rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* ---------- Why list ---------- */
+
+.why-list {
+  display: grid;
+  gap: 0;
+}
+
+.why-item {
+  padding: 28px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.why-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.why-item h3 {
+  font-size: 1.28rem;
+  margin-bottom: 8px;
+}
+
+.why-item p {
+  color: var(--ink-soft);
+  max-width: 62ch;
+}
+
 /* ---------- FAQ ---------- */
 
 .faq-list {
@@ -532,7 +490,7 @@ h3 {
 }
 
 .faq-item {
-  padding: 28px 0;
+  padding: 26px 0;
   border-top: 1px solid var(--rule);
 }
 
@@ -546,166 +504,24 @@ h3 {
   max-width: 62ch;
 }
 
-/* ---------- Contact ---------- */
-
-.contact-wrap {
-  display: grid;
-  gap: 56px;
-}
-
-.contact-copy h2 {
-  font-size: clamp(1.9rem, 1.4rem + 2.4vw, 2.7rem);
-}
-
-.contact-sub {
-  margin-top: 18px;
-  font-size: 1.15rem;
-  font-style: italic;
-  max-width: 42ch;
-}
-
-.contact-direct {
-  margin-top: 48px;
-  display: grid;
-  gap: 10px;
-}
-
-.direct-label {
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: #b99a5f;
-  margin-bottom: 6px;
-}
-
-.direct-link {
-  color: var(--cream);
-  font-size: 1.1rem;
-  width: fit-content;
-  border-bottom: 1px solid var(--rule-light);
-  padding-bottom: 2px;
-}
-
-.direct-link:hover {
-  border-bottom-color: var(--cream);
-}
-
-/* Form — underlined fields on navy */
-
-.contact-form {
-  display: grid;
-  gap: 30px;
-}
-
-.form-row {
-  display: grid;
-  gap: 30px;
-}
-
-.form-field {
-  display: grid;
-  gap: 8px;
-}
-
-.form-field label {
-  font-size: 0.78rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--cream-muted);
-}
-
-.optional {
-  text-transform: none;
-  letter-spacing: 0.02em;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.form-field input,
-.form-field textarea {
-  width: 100%;
-  padding: 10px 2px;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--rule-light-strong);
-  border-radius: 0;
-  color: var(--cream);
-  font-family: inherit;
-  font-size: 1.05rem;
-}
-
-.form-field textarea {
-  resize: vertical;
-  min-height: 96px;
-}
-
-.form-field input::placeholder,
-.form-field textarea::placeholder {
-  color: rgba(247, 243, 234, 0.38);
-  font-style: italic;
-}
-
-.form-field input:focus,
-.form-field textarea:focus {
-  outline: none;
-  border-bottom-color: var(--cream);
-}
-
-.gotcha {
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-}
-
-.contact-form .btn {
-  justify-self: start;
-}
-
-.form-status {
-  font-size: 1rem;
-  font-style: italic;
-  min-height: 1.4em;
-  margin: 0;
-}
-
-.form-status.ok {
-  color: #a8c6a4;
-}
-
-.form-status.error {
-  color: #d9b98a;
-}
-
-.form-status a {
-  text-decoration: underline;
-  color: var(--cream);
-}
-
 /* ---------- Footer ---------- */
 
 .site-footer {
-  background: var(--navy-deep);
+  background: var(--navy);
   color: var(--cream-muted);
-  padding-block: 34px;
-  border-top: 1px solid var(--rule-light);
+  padding-block: 32px;
 }
 
 .footer-inner {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   align-items: flex-start;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
 }
 
 .footer-brand {
   color: var(--cream);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-size: 0.88rem;
 }
 
 .footer-meta {
@@ -714,16 +530,9 @@ h3 {
   gap: 8px 28px;
 }
 
-.footer-meta a:hover {
-  color: var(--cream);
-}
-
-/* ---------- Reduced motion ---------- */
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+.footer-meta a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* ---------- Mobile nav (<= 800px) ---------- */
@@ -753,7 +562,7 @@ h3 {
 
   .nav-link {
     padding: 14px 2px;
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     border-bottom: 1px solid var(--rule);
   }
 
@@ -765,63 +574,45 @@ h3 {
 /* ---------- Larger screens ---------- */
 
 @media (min-width: 620px) {
-  .form-row {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .rule-grid-4 {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 48px;
-    row-gap: 52px;
+    column-gap: 44px;
+    row-gap: 48px;
   }
 }
 
 @media (min-width: 801px) {
   .section {
-    padding-block: 120px;
+    padding-block: 80px;
   }
 }
 
 @media (min-width: 920px) {
   .rule-grid-4 {
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 40px;
+    column-gap: 36px;
   }
 
   .deliver-cols {
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 48px;
-  }
-
-  .faq-list {
-    grid-template-columns: 1fr 1fr;
-    column-gap: 72px;
-  }
-
-  .faq-item:nth-child(2) {
-    border-top: none;
-    padding-top: 0;
+    column-gap: 44px;
   }
 
   .who-cols {
     grid-template-columns: 1fr 1fr;
-    gap: 64px;
+    gap: 60px;
   }
 
-  .why-list {
+  .why-list,
+  .faq-list {
     grid-template-columns: 1fr 1fr;
-    column-gap: 72px;
+    column-gap: 68px;
   }
 
-  .why-item:nth-child(2) {
+  .why-item:nth-child(2),
+  .faq-item:nth-child(2) {
     border-top: none;
     padding-top: 0;
-  }
-
-  .contact-wrap {
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-    gap: 88px;
-    align-items: start;
   }
 
   .footer-inner {
